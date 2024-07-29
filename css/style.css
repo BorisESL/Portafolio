@@ -1,18 +1,65 @@
+/* Estilos de la barra de navegación */
+.navbar {
+    background-color: #f7efef;
+    height: 80px;
+    margin: 20px;
+    border-radius: 1rem;
+    padding: 0.5rem;
+}
 
 .navbar-brand {
     font-weight: 700;
-    color:#ffffff;
+    color: #000000;
     font-family: "Anta", sans-serif;
     font-size: 24px;
-    transition: 0.3s color;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
 }
 
-.navbar-brand:hover {
-    color: #ff8400;
+.typing {
+    display: inline-block;
+    border-right: 2px solid rgb(0, 0, 0); /* Carácter que parpadea */
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 4s steps(30, end), blink-caret 0.75s step-end infinite, caret-blink 0.75s step-end infinite;
+    font-size: 24px;
+    font-family: "Anta", sans-serif;
+}
+
+/* Efecto de escritura */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* Efecto del cursor parpadeante */
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: rgb(0, 0, 0);
+    }
+}
+
+/* Efecto del cursor parpadeante */
+@keyframes caret-blink {
+    0%,
+    100% {
+        border-color: transparent;
+    }
+    50% {
+        border-color: rgb(0, 0, 0);
+    }
 }
 
 .click-button {
-    background-color: #ffffff;
+    background-color: #ff8400;
     color: #000000;
     font-size: 20px;
     padding: 10px 20px;
@@ -55,7 +102,7 @@
         transform: translateX(-50%);
         width: 0%;
         height: 2px;
-        background-color: #f4f4f4;
+        background-color: #ec1212;
         visibility: hidden;
         transition: 0.3s ease-in-out;
     }
@@ -66,7 +113,57 @@
     }
 }
 
-body {
-    background-color: rgb(0, 0, 0);
+/* Estilos de la sección hero */
+/* Estilos de la sección hero */
+.hero-section {
+    background: url('/img/fondo.jpg') no-repeat center center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    animation: blurBackground 60s ease-in-out infinite;
 }
 
+.hero-section::before {
+    background-color: rgba(0, 0, 0, 0.6);
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+
+@keyframes blurBackground {
+    0%, 100% {
+        filter: blur(0);
+        background-position: 0 0;
+    }
+    50% {
+        filter: blur(5px);
+        background-position: 100% 100%;
+    }
+}
+
+body {
+    background-color: rgb(0, 0, 0);
+    color: #ffffff; /* Asegura que el texto sea legible sobre el fondo negro */
+}
+
+
+.hero-section::before {
+    background-color: rgba(0, 0, 0, 0.6);
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+body {
+    background-color: rgb(0, 0, 0);
+    color: #ffffff; /* Asegura que el texto sea legible sobre el fondo negro */
+}
