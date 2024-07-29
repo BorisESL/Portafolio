@@ -102,7 +102,7 @@
         transform: translateX(-50%);
         width: 0%;
         height: 2px;
-        background-color: #ec1212;
+        background-color: #ff8400;
         visibility: hidden;
         transition: 0.3s ease-in-out;
     }
@@ -116,7 +116,7 @@
 /* Estilos de la sección hero */
 /* Estilos de la sección hero */
 .hero-section {
-    background: url('/img/fondo.jpg') no-repeat center center;
+    background: url('./img/fondo.jpg') no-repeat center center;
     background-size: cover;
     width: 100%;
     height: 100vh;
