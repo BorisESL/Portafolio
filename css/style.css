@@ -1,6 +1,6 @@
 /* Estilos de la barra de navegación */
 .navbar {
-    background-color: #f7efef;
+    
     height: 80px;
     margin: 20px;
     border-radius: 1rem;
@@ -10,17 +10,22 @@
 
 .navbar-brand {
     font-weight: 700;
-    color: #000000;
+    color: #ff8400;
     font-family: "Anta", sans-serif;
     font-size: 24px;
     white-space: nowrap;
     overflow: hidden;
     position: relative;
+    transition: 0.3s;
+}
+
+.navbar-brand:hover {
+    color: #FF4500;
 }
 
 .typing {
     display: inline-block;
-    border-right: 2px solid rgb(0, 0, 0);
+    border-right: 2px solid #ff8400;
     /* Carácter que parpadea */
     white-space: nowrap;
     overflow: hidden;
@@ -42,40 +47,36 @@
 
 /* Efecto del cursor parpadeante */
 @keyframes blink-caret {
+
     from,
     to {
         border-color: transparent;
     }
 
     50% {
-        border-color: rgb(0, 0, 0);
+        border-color: #ff8400;
     }
 }
 
 /* Efecto del cursor parpadeante */
 @keyframes caret-blink {
+
     0%,
     100% {
         border-color: transparent;
     }
 
     50% {
-        border-color: rgb(0, 0, 0);
+        border-color: #ff8400;
     }
 }
 
-.click-button {
-    background-color: #ff8400;
-    color: #000000;
-    font-size: 20px;
-    padding: 10px 20px;
-    border-radius: 2rem;
-    text-decoration: none;
-    transition: 0.3s background-color;
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,132,0, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
-.click-button:hover {
-    background-color: #ff8400;
+.custom-toggler.navbar-toggler {
+    border-color: rgba(255,132,0, 0.8);
 }
 
 .navbar-toggler {
@@ -90,13 +91,13 @@
 }
 
 .nav-link {
-    color: #666777;
+    color: #ff8400;
     font-weight: 700;
     position: relative;
 }
 
 .nav-link:hover {
-    color: #ff8400;
+    color: #FF4500;
 }
 
 @media (min-width: 991px) {
@@ -108,7 +109,7 @@
         transform: translateX(-50%);
         width: 0%;
         height: 2px;
-        background-color: #ff8400;
+        background-color: #FF4500;
         visibility: hidden;
         transition: 0.3s ease-in-out;
     }
@@ -151,11 +152,13 @@
 }
 
 @keyframes blurBackground {
+
     0%,
     100% {
         filter: blur(0);
         background-position: 0 0;
     }
+
     50% {
         filter: blur(5px);
         background-position: 100% 100%;
@@ -182,8 +185,6 @@ body {
     border-left: 1px solid rgba(255, 255, 255, 0.5);
     border-top: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 15px;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
     transition: all 400ms;
     position: relative;
     z-index: 2;
@@ -216,16 +217,16 @@ body {
 
 .cards h2 {
     font-size: 20px;
-    font-weight: 400px;
+    font-weight: bold;
     margin-top: 20px;
-    color: #000000;
+    color: #ff8400;
 }
 
 .cards p {
     margin-top: 20px;
     font-size: 14px;
-    font-weight: 300px;
-    color: #000000;
+    font-weight: bold;
+    color: #ff8400;
     letter-spacing: 0.5px;
 }
 
@@ -233,13 +234,14 @@ body {
     margin-top: 30px;
     border: none;
     height: 0.2px;
-    background: #000000;
+    background: #ff8400;
 }
 
 .footer__card {
     margin-top: 10px;
+    font-weight: bold;
     display: flex;
-    color: #fff;
+    color: #ff8400;
     justify-content: space-between;
 }
 
@@ -253,22 +255,24 @@ body {
     display: flex;
     align-items: center;
     height: 100vh;
-    animation: fade-in-right .6s cubic-bezier(.39, .575, .565, 1.000) both;
+    animation: fade-in-right 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
     position: relative;
     z-index: 2;
 }
 
 @media (max-width: 576px) {
     .container__cards {
-        margin-top: 120px; /* Ajusta este valor si es necesario para evitar el solapamiento */
+        margin-top: 120px;
+        /* Ajusta este valor si es necesario para evitar el solapamiento */
     }
 }
 
 @keyframes fade-in-right {
     0% {
-        transform: translateX(50px);
+        transform: translateX(-150px);
         opacity: 0
     }
+
     100% {
         transform: translateX(0);
         opacity: 1
