@@ -5,6 +5,7 @@
     margin: 20px;
     border-radius: 1rem;
     padding: 0.5rem;
+    z-index: 3;
 }
 
 .navbar-brand {
@@ -255,6 +256,12 @@ body {
     animation: fade-in-right .6s cubic-bezier(.39, .575, .565, 1.000) both;
     position: relative;
     z-index: 2;
+}
+
+@media (max-width: 576px) {
+    .container__cards {
+        margin-top: 120px; /* Ajusta este valor si es necesario para evitar el solapamiento */
+    }
 }
 
 @keyframes fade-in-right {
